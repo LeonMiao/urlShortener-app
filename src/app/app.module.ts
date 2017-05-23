@@ -8,7 +8,7 @@ import { ListsComponent } from './lists/lists.component';
 import { ListComponent } from './list/list.component';
 
 import { ListsTableComponent } from './lists/lists-table/lists-table.component';
-//import { ItemsTableComponent } from './list/items-table/items-table.component';
+import { ItemsTableComponent } from './list/items-table/items-table.component';
 
 import { UrlShortenerService } from './url-shortener.service';
 
@@ -26,10 +26,8 @@ import { ConvertedComponent } from './converted/converted.component';
     ListsTableComponent,
     ConvertComponent,
     LoginComponent,
-    ConvertedComponent
-//=======
-//    ItemsTableComponent
-//>>>>>>> 4144b0705b31a5a241746173be8e044a0119c18d
+    ConvertedComponent,
+    ItemsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +35,7 @@ import { ConvertedComponent } from './converted/converted.component';
     HttpModule,
     routing
   ],
-  providers: [ {provide: APP_BASE_HREF, useValue: '/'}, UrlShortenerService ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, UrlShortenerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

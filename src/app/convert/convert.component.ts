@@ -22,4 +22,7 @@ export class ConvertComponent implements OnInit {
     //this.convert = false;
     this.router$.navigate(['/converted']);
   }
+
+
+  
 }
