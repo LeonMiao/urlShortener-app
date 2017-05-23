@@ -13,13 +13,19 @@ import { UrlShortenerService } from './url-shortener.service';
 
 import { APP_BASE_HREF } from '@angular/common';
 import { routing } from './app.routing';
+import { ConvertComponent } from './convert/convert.component';
+import { LoginComponent } from './login/login.component';
+import { ConvertedComponent } from './converted/converted.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListsComponent,
     ListComponent,
-    ListsTableComponent
+    ListsTableComponent,
+    ConvertComponent,
+    LoginComponent,
+    ConvertedComponent
   ],
   imports: [
     BrowserModule,
