@@ -1,0 +1,31 @@
+<h4 class="panel-heading" style="background-color:light-grey">
+  Hello, <a [routerLink]="['/list/', account.accountId]">{{account.userName}}</a>
+</h4>
+
+<div class="panel-body">
+  <p> First Name: {{account.fName}}</p>
+  <p> Middle Name: {{account.mName}}</p>
+  <p> Last Name: {{account.lName}}</p>
+  <p> Email Address: {{account.emailAddr}}</p>
+  <p> Phone Number: {{account.phoneNum}}</p>
+  <p> Account Type: {{account.userType}}</p>
+</div>
+
+<table class="table" style="font-size:10pt;">
+  <tbody>
+    <tr>
+      <td>Member since: <span>{{account.createDate}}</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--
+    accountId: number;
+    userName: string;
+    fName: string;
+    mName: string;
+    lName: string;
+    emailAddr: string;
+    phoneNum: string;
+    userType: string;
+    createDate: string;-->

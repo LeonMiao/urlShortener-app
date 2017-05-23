@@ -1,0 +1,18 @@
+<div class="container" >
+	<div class="panel panel-default" style="border-width: 0px; border-style:solid">
+		<div class="panel-default">
+			<h3>Active Accounts</h3>
+		</div>
+		<br>
+		<div>
+			<div class="panel panel-heading" style="border-width: 1px; border-style:solid; border-color:gray;" *ngFor="let result of accountList; let i = index">
+				<!-- Default panel contents -->
+
+				<lists-table [account]="result" [index]="i"></lists-table>
+				<!-- Table -->
+			</div>
+
+		</div>
+	</div>
+</div>
+
