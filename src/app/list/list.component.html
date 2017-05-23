@@ -1,3 +1,17 @@
-<p>
-  list works!
-</p>
+<div class="container">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel" style="color:white; background-color:lightgrey">
+      <!--<h3>URLs for {account user name...}</h3>-->
+      <h3>URLs</h3>
+
+      <!--<div>
+        <a style="color:white" href="#"><span class="glyphicon glyphicon-edit"></span></a>
+        <a style="color:white" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+        <a style="color:white" href="#"><span class="glyphicon glyphicon-ok"></span></a>
+      </div>-->
+    </div>
+    <items-table [items]="urlList"></items-table>
+    <!-- Table -->
+  </div>
+</div>

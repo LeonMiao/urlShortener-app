@@ -13,4 +13,9 @@ export class UrlShortenerService {
       .map(response => response.json());
   }
 
+  getUrlsForAccount(pId: string) {
+    return this.http.get(this.host + '/app/account/' + pId)
+      .map(response => response.json());
+  }
+
 }

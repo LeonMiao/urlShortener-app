@@ -8,6 +8,7 @@ import { ListsComponent } from './lists/lists.component';
 import { ListComponent } from './list/list.component';
 
 import { ListsTableComponent } from './lists/lists-table/lists-table.component';
+import { ItemsTableComponent } from './list/items-table/items-table.component';
 
 import { UrlShortenerService } from './url-shortener.service';
 
@@ -19,7 +20,8 @@ import { routing } from './app.routing';
     AppComponent,
     ListsComponent,
     ListComponent,
-    ListsTableComponent
+    ListsTableComponent,
+    ItemsTableComponent
   ],
   imports: [
     BrowserModule,
