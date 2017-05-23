@@ -17,6 +17,6 @@ export class ConvertedComponent implements OnInit {
   }
 
   onClick() {
-    this.router$.navigate(['/convert']);
+    this.router$.navigate(['/url']);
   }
 }
