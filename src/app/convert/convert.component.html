@@ -1,13 +1,21 @@
-<div ng-app="">
 <div class="container" ng-show="convert">
-  <h4>Input your long URL</h4>
+  <h4>Input your loooooooooong URL</h4>
 
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="input your long url...">
-    <span class="input-group-btn">
-      <button (click)="onClick()" class="btn btn-primary" type="button">Get Your Short URL</button>
-    </span>
-  </div>
+
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Input goes here..." [(ngModel)]="inputLongUrl" name="inputLongUrl">
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Get Your Short URL" />
+    <!--<input class="btn btn-primary" type="button" value="Get Your Short URL" (click)="onClick()"/>-->
+
+    <!--<button (click)="onClick()" class="btn btn-primary" type="button">Get Another!</button>-->
+
+    <!--</span>-->
+  </form>
+
 </div>
 <!--
 <div class="container" ng-show="!convert">

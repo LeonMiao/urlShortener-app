@@ -7,7 +7,6 @@ import { Router, Params } from '@angular/router';
   styleUrls: ['./converted.component.css']
 })
 export class ConvertedComponent implements OnInit {
-
   router$:Router;
 
   constructor(_router: Router ) {
@@ -18,6 +17,6 @@ export class ConvertedComponent implements OnInit {
   }
 
   onClick() {
-    this.router$.navigate(['/convert']);
+    this.router$.navigate(['/url']);
   }
 }
