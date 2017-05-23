@@ -9,7 +9,7 @@ var should = chai.should();
 var http = require('http');
 chai.use(chaiHttp);
 
-describe('Test List of Accounts result', function () {
+describe('Test GET List of Accounts result', function () {
 //	this.timeout(15000);
 
 	var requestResult;
@@ -38,11 +38,19 @@ describe('Test List of Accounts result', function () {
 	    expect(requestResult[0]).to.include.keys('accountId');
 	});
     it('The first entry is formed correctly', function(){
-		//expect(response).to.have.deep.property('body[0].listId', 1);
 		expect(response.body).to.not.be.a.string;
 	});
 
-	it('The elements returned array have all the expected properties', function(){
+    it('All elements in returned array have accountId number', function(){
+		expect(response.body).to.satisfy(
+			function (body) {
+				for (var i = 0; i < body.length; i++) {
+	                expect(body[i]).to.have.property('accountId').that.is.a('number');
+				}
+				return true;
+			});
+    });
+	it('The elements returned array have all the expected string properties', function(){
 		expect(response.body).to.satisfy(
 			function (body) {
 				for (var i = 0; i < body.length; i++) {
