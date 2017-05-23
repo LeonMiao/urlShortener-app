@@ -7,7 +7,7 @@ import { Router, Params } from '@angular/router';
   styleUrls: ['./convert.component.css']
 })
 export class ConvertComponent implements OnInit {
-  //convert:boolean;
+  inputLongUrl:string;
   router$:Router;
 
   constructor( _router: Router ) {
@@ -19,10 +19,16 @@ export class ConvertComponent implements OnInit {
   }
 
   onClick(){
-    //this.convert = false;
-    this.router$.navigate(['/converted']);
+    
+    this.router$.navigate(['/url']);
   }
 
 
-  
+  onSubmit(){
+    console.log(this.inputLongUrl);
+    this.router$.navigate(['/url/'+this.inputLongUrl]);
+
+  }
+
+
 }

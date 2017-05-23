@@ -14,8 +14,8 @@ const routes: Routes = [
     { path: '', component: ConvertComponent },
     { path: 'list', component: ListsComponent },
     { path: 'list/:id', component: ListComponent},
-    { path: 'convert', component: ConvertComponent},
-    { path: 'converted', component: ConvertedComponent},
+    { path: 'url', component: ConvertComponent},
+    { path: 'url/:shortUrl', component: ConvertedComponent},
     { path: 'login', component: LoginComponent}
 ];
 

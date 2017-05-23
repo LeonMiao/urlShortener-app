@@ -7,7 +7,6 @@ import { Router, Params } from '@angular/router';
   styleUrls: ['./converted.component.css']
 })
 export class ConvertedComponent implements OnInit {
-
   router$:Router;
 
   constructor(_router: Router ) {
