@@ -27,20 +27,22 @@ describe('Test List of Accounts result', function () {
 			});
         });
     
-    it('Should return an array object with more than 1 object', function (){
+    it('GET should return an array object with at least 1 object', function (){
 		expect(response).to.have.status(200);
         expect(response.body).to.be.an.object;
-		expect(response.body).to.have.length.above(2); //???
+		expect(response.body).to.have.length.above(2);
 		expect(response).to.have.headers;
     });
     
-	it('The first entry in the array has known properties', function(){
+	it('The first entry in the array has accountID', function(){
 	    expect(requestResult[0]).to.include.keys('accountId');
-	    expect(requestResult[0]).to.have.property('username');
-		expect(response).to.have.deep.property('body[0].listId', 1);
+	});
+    it('The first entry is formed correctly', function(){
+		//expect(response).to.have.deep.property('body[0].listId', 1);
 		expect(response.body).to.not.be.a.string;
 	});
-	it('The elements in the array have the expecte properties', function(){
+
+	it('The elements returned array have all the expected properties', function(){
 		expect(response.body).to.satisfy(
 			function (body) {
 				for (var i = 0; i < body.length; i++) {

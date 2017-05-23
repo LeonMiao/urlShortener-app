@@ -1,1 +1,1 @@
-"./node_modules/mocha/mocha" --reporter spec test/test1.js
+"./node_modules/mocha/bin/mocha" --reporter spec test/test1.js
