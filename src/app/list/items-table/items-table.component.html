@@ -1,0 +1,35 @@
+<!-- Table -->
+<table class="table" style="font-size:10pt;">
+  <thead>
+    <tr>
+      <th>Short URL</th>
+      <th>Long URL</th>
+      <th>Expiration Date</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of items; let i = index">
+      <td>{{result.shortUrl}}</td>
+      <td>{{result.longUrl}}</td>
+      <td>{{result.expirationDate}}</td>
+      <td>
+        <div class="action-buttons">
+          <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+          <a href="#"><span class="glyphicon glyphicon-list-alt"></span></a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--// interface IUrlModel {
+//     accountId: number;
+//     urls: [ {
+//         urlId: number;
+//         shortUrl: string;
+//         longUrl: string;
+//         expirationDate: string;
+//         isRemoved: boolean;
+//     }];
+// }-->
