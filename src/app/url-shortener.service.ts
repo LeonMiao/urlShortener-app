@@ -22,7 +22,7 @@ export class UrlShortenerService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.host + '/app/url/', {longUrl: inputLongUrl})
+    return this.http.post(this.host + '/app/url/', {longUrl: inputLongUrl, })
       .map(response => response.json());
   }
 }

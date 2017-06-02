@@ -13,7 +13,7 @@ import { UrlShortenerService } from '../url-shortener.service';
 export class ConvertComponent implements OnInit {
   inputLongUrl: string;
   router$: Router;
-  urlList: IUrlModel[];
+  newUrl: IUrlModel;
   urlShortener$: UrlShortenerService;
 
   constructor(_router: Router, _urlShortener: UrlShortenerService) {
@@ -47,14 +47,23 @@ export class ConvertComponent implements OnInit {
     this.urlShortener$.convertAndStore(this.inputLongUrl)
       .subscribe(
       result => {
-        this.urlList = result;
-        console.log('result:' + this.urlList.toString());
+        this.newUrl = result;
+        console.log("result for newUrl:");
+        console.log(result);
+
+        // console.log("this.newUrl.shortUrl:");
+        // //console.log(this.newUrl.shortUrl);
+
+        console.log('result:' + this.newUrl.toString());
+
+        this.router$.navigate(['/url/' + this.newUrl.shortUrl]);
+
       },
       () => console.log('Error calling REST'),
-      () => console.log('REST call:' + this.urlList)
+      () => console.log('REST call:' + this.newUrl)
       );
 
-    this.router$.navigate(['/url/new_url_for_test']);
+
   }
 
 
