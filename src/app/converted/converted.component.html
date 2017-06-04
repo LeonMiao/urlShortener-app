@@ -1,6 +1,12 @@
 <div class="container">
-  <div class="input-group" style="padding:39px;">
-    <input type="text" class="form-control" value="www.shortenme.com/new_url_for_test">
+  <h4>Your long URL is: </h4>
+  <div class="input-group">
+    <a href="{{outputLongUrl}}">{{outputLongUrl}}</a>
+  </div>
+
+  <h4>Your short URL is: </h4>
+  <div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="outPutShortUrlToShow" name="outPutShortUrlToShow">
     <!--<span class="input-group-btn">
       <button (click)="onCopyClick()" class="btn btn-secondary" type="button">Copy</button>
     </span>-->

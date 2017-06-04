@@ -12,6 +12,9 @@ import { UrlShortenerService } from '../url-shortener.service';
 })
 export class ConvertedComponent implements OnInit {
   inputShortUrl: string;
+  outputLongUrl: string;
+  outputShortUrl: string;
+  outPutShortUrlToShow: string;
   router$: Router;
   convertedUrl: IUrlModel;
 
@@ -36,6 +39,9 @@ export class ConvertedComponent implements OnInit {
         console.log("result for convertedUrl:");
         console.log(result);
 
+        this.outputLongUrl = result.longUrl;
+        this.outputShortUrl = result.shortUrl;
+        this.outPutShortUrlToShow = 'http://localhost/' + this.outputShortUrl;
         // console.log("this.newUrl.shortUrl:");
         // //console.log(this.newUrl.shortUrl);
 
