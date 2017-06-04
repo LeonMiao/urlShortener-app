@@ -4,7 +4,7 @@
     <tr>
       <th>Short URL</th>
       <th>Long URL</th>
-      <th>Expiration Date</th>
+      <th>Emoji Link</th>
       <th>Operations</th>
     </tr>
   </thead>
@@ -12,7 +12,7 @@
     <tr *ngFor="let result of items; let i = index">
       <td>{{result.shortUrl}}</td>
       <td>{{result.longUrl}}</td>
-      <td>{{result.expirationDate}}</td>
+      <td>{{result.emojiLink}}</td>
       <td>
         <div class="action-buttons">
           <a href="#"><span class="glyphicon glyphicon-trash"></span></a>

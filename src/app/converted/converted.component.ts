@@ -15,10 +15,14 @@ export class ConvertedComponent implements OnInit {
   outputLongUrl: string;
   outputShortUrl: string;
   outPutShortUrlToShow: string;
+  outputEmoji: string;
+  outPutEmojiToShow: string;
   router$: Router;
   convertedUrl: IUrlModel;
 
   urlShortener$: UrlShortenerService;
+
+  totalClicks: number;
 
 
   constructor(_router: Router, _urlShortener: UrlShortenerService) {
@@ -41,7 +45,15 @@ export class ConvertedComponent implements OnInit {
 
         this.outputLongUrl = result.longUrl;
         this.outputShortUrl = result.shortUrl;
+        console.log("outputShortUrl length: " + this.outputShortUrl.length);
+
+
         this.outPutShortUrlToShow = 'http://localhost:8080/' + this.outputShortUrl;
+        this.outputEmoji = result.emojiLink;
+
+        console.log("emojiLink length: " + this.outputEmoji.length);
+
+        this.outPutEmojiToShow = 'http://localhost:8080/' + this.outputEmoji;
         // console.log("this.newUrl.shortUrl:");
         // //console.log(this.newUrl.shortUrl);
 
