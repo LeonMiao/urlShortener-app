@@ -21,25 +21,10 @@ export class ConvertComponent implements OnInit {
     this.router$ = _router;
     this.urlShortener$ = _urlShortener;
   }
+  
   ngOnInit() {
     //this.convert = true;
   }
-
-  // onClick() {
-  //   console.log(this.inputLongUrl);
-
-  //   this.urlShortener$.convertAndStore(this.inputLongUrl)
-  //     .subscribe(
-  //     result => {
-  //       this.urlList = result;
-  //       console.log('result:' + this.urlList.toString());
-  //     },
-  //     () => console.log('Error calling REST'),
-  //     () => console.log('REST call:' + this.urlList)
-  //     );
-
-  //   this.router$.navigate(['/url/new_url_for_test']);
-  // }
 
   onSubmit() {
     console.log(this.inputLongUrl);
@@ -62,8 +47,6 @@ export class ConvertComponent implements OnInit {
       () => console.log('Error calling REST'),
       () => console.log('REST call:' + this.newUrl)
       );
-
-
   }
 
 
