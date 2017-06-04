@@ -41,7 +41,7 @@ export class ConvertedComponent implements OnInit {
 
         this.outputLongUrl = result.longUrl;
         this.outputShortUrl = result.shortUrl;
-        this.outPutShortUrlToShow = 'http://localhost/' + this.outputShortUrl;
+        this.outPutShortUrlToShow = 'http://localhost:8080/' + this.outputShortUrl;
         // console.log("this.newUrl.shortUrl:");
         // //console.log(this.newUrl.shortUrl);
 
