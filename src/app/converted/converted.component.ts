@@ -22,9 +22,6 @@ export class ConvertedComponent implements OnInit {
 
   urlShortener$: UrlShortenerService;
 
-  totalClicks: number;
-
-
   constructor(_router: Router, _urlShortener: UrlShortenerService) {
     this.router$ = _router;
     this.urlShortener$ = _urlShortener;
@@ -47,25 +44,17 @@ export class ConvertedComponent implements OnInit {
         this.outputShortUrl = result.shortUrl;
         console.log("outputShortUrl length: " + this.outputShortUrl.length);
 
-
         this.outPutShortUrlToShow = 'http://localhost:8080/' + this.outputShortUrl;
         this.outputEmoji = result.emojiLink;
 
         console.log("emojiLink length: " + this.outputEmoji.length);
 
         this.outPutEmojiToShow = 'http://localhost:8080/' + this.outputEmoji;
-        // console.log("this.newUrl.shortUrl:");
-        // //console.log(this.newUrl.shortUrl);
-
-        //console.log('result:' + this.newUrl.toString());
-
-        //this.router$.navigate(['/url/' + this.newUrl.shortUrl]);
-
+        
       },
       () => console.log('Error calling REST'),
       () => console.log('REST call:' + this.convertedUrl)
       );
-    // //findByShortUrl
   }
 
   onClick() {

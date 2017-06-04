@@ -17,13 +17,11 @@ export class ConvertComponent implements OnInit {
   urlShortener$: UrlShortenerService;
 
   constructor(_router: Router, _urlShortener: UrlShortenerService) {
-    //this.convert = true;
     this.router$ = _router;
     this.urlShortener$ = _urlShortener;
   }
-  
+
   ngOnInit() {
-    //this.convert = true;
   }
 
   onSubmit() {
@@ -37,7 +35,7 @@ export class ConvertComponent implements OnInit {
         console.log(result);
 
         // console.log("this.newUrl.shortUrl:");
-        // //console.log(this.newUrl.shortUrl);
+        //console.log(this.newUrl.shortUrl);
 
         console.log('result:' + this.newUrl.toString());
 
