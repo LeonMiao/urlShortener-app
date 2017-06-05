@@ -5,8 +5,29 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UrlShortenerService {
   host: string = 'http://localhost:8080';
+  //host: string = 'http://localhost:4200';
+
+  userId: string = "";
 
   constructor(private http: Http) { }
+
+  //=======================
+
+  setUserid(uId: string) {
+    this.userId = uId;
+  }
+
+  // validateLUsernameInfo(username: string) {
+  //   return this.http.get(this.host + '/api/user/username/' + username)
+  //     .map(response => response.json());
+  // }
+
+  getUserInfo() {
+    return this.http.get(this.host + '/auth/userdata')
+      .map(response => response.json());
+  }
+
+  //=======================
 
   getAllAccounts() {
     return this.http.get(this.host + '/app/account/')

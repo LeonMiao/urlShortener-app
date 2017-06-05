@@ -11,12 +11,12 @@ import { LoginComponent} from './login/login.component';
 //import { List2Component } from './newList/list2.component';
 
 const routes: Routes = [
-    { path: '', component: ConvertComponent },
+    { path: '', component: LoginComponent },
     { path: 'list', component: ListsComponent },
     { path: 'list/:id', component: ListComponent},
     { path: 'url', component: ConvertComponent},
-    { path: 'url/:shortUrl', component: ConvertedComponent},
-    { path: 'login', component: LoginComponent}
+    { path: 'url/:shortUrl', component: ConvertedComponent}//,
+    //{ path: 'login', component: LoginComponent}
 ];
 
 export const routing = RouterModule.forRoot(routes);

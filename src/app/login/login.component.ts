@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Params } from '@angular/router';
+import { UrlShortenerService } from '../url-shortener.service';
+import IAccountModel from '../share/IAccountModel';
+
 
 @Component({
   selector: 'app-login',
@@ -8,18 +11,32 @@ import { Router, Params } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  switchElement = true
-  ;
-  router$:Router;
+  //switchElement = true;
+  username: string;
+  password: string;
+  router$: Router;
+  urlShortener$: UrlShortenerService;
 
-  constructor(_router: Router ) {
+
+  constructor(_router: Router, _urlShortener: UrlShortenerService) {
     this.router$ = _router;
+    this.urlShortener$ = _urlShortener;
+    
+    this.urlShortener$.getUserInfo()
+      .subscribe(
+      result => {
+        this.username = result.displayName;
+        this.password = result.emails[0].value;
+      },
+      () => { this.username = "not logged in" },
+      () => console.log('REST call' + this.username)
+      );
   }
 
   ngOnInit() {
   }
 
   onClick() {
-    
+
   }
 }

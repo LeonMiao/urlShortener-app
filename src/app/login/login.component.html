@@ -1,4 +1,4 @@
-<div class="container" ng-show="toggle">
+<!--<div class="container" ng-show="toggle">
   <div class="row" style="margin-top: 50px">
     <div [hidden]="!switchElement" class="col-md-4 col-md-offset-4">
       <h3>Login</h3>
@@ -48,7 +48,42 @@
       </div>
     </div>
   </div>
+</div>-->
+
+<!--<div class="container theme-showcase">
+	<div class="jumbotron">
+		<h1>To Do List</h1>
+		<p>Keep track of all of things you need to do by creating lists and sharing items with friends.</p>
+		<p>
+			<a [routerLink]="['/list']" class="btn btn-lg btn-primary" role="button">View</a>
+		</p>
+	</div>
+</div> -->
+
+<div class="container theme-showcase">
+	<div class="jumbotron">
+		<h1>Social Tool</h1>
+		<p>Use this tool to comment on social posts</p>
+		<div>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon" id="sizing-addon1">U</span>
+  				<input type="text" class="form-control" placeholder="username" [(ngModel)]="username">
+			</div>
+			<br>
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon" id="sizing-addon2">P</span>
+  				<input type="text" class="form-control" placeholder="password" [(ngModel)]="password">
+			</div>
+			<br>
+			<!--<a href="/auth/google" class="btn btn-default">Login with Google</a>-->
+			<a href="/auth/facebook" class="btn btn-default">Login with Facebook</a>
+			<!--<button (click)="onClick()" class="btn btn-default" type="button">Login with Google</button>-->
+		</div>
+	</div>
 </div>
+
+
+
 
 <!--
 <div class="container" ng-show"toggle">
