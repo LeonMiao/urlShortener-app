@@ -5,7 +5,7 @@
       <th>Short URL</th>
       <th>Long URL</th>
       <th>Emoji Link</th>
-      <th>Operations</th>
+      <th>View Detail</th>
     </tr>
   </thead>
   <tbody>
@@ -15,14 +15,15 @@
       <td>{{result.emojiLink}}</td>
       <td>
         <div class="action-buttons">
-          <a href="#"><span class="glyphicon glyphicon-trash"></span></a>
-          <a href="#"><span class="glyphicon glyphicon-list-alt"></span></a>
+          <!--<a href="#"><span class="glyphicon glyphicon-trash"></span></a>-->
+          <a [routerLink]="['/url/', result.shortUrl]"><span class="glyphicon glyphicon-list-alt"></span></a>
         </div>
       </td>
     </tr>
   </tbody>
 </table>
 
+<!--http://localhost:8080/url/jM6LQw-->
 <!--// interface IUrlModel {
 //     accountId: number;
 //     urls: [ {

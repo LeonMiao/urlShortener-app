@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UrlShortenerService {
-  host: string = 'http://localhost:8080';
+  host: string = 'http://shortenme.azurewebsites.net';
   //host: string = 'http://localhost:4200';
 
   userId: string = "";

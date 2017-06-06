@@ -11,7 +11,7 @@ export class ListsComponent implements OnInit {
   username: string;
   email: string;
   accountId: string;
-  accountList: IAccountModel;
+  accountList: IAccountModel[];
 
   constructor(urlShortener$: UrlShortenerService) {
     urlShortener$.getUserInfo()
