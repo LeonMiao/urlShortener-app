@@ -1,5 +1,5 @@
 interface IAccountModel {
-    accountId: number;
+    accountId: string;
     userName: string;
     fName: string;
     mName: string;

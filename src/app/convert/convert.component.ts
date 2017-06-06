@@ -11,6 +11,9 @@ import { UrlShortenerService } from '../url-shortener.service';
   styleUrls: ['./convert.component.css']
 })
 export class ConvertComponent implements OnInit {
+  username: string;
+  email: string;
+
   inputLongUrl: string;
   router$: Router;
   newUrl: IUrlModel;
@@ -19,6 +22,20 @@ export class ConvertComponent implements OnInit {
   constructor(_router: Router, _urlShortener: UrlShortenerService) {
     this.router$ = _router;
     this.urlShortener$ = _urlShortener;
+
+    this.urlShortener$.getUserInfo()
+      .subscribe(
+      result => {
+        this.username = result.displayName;
+        this.email = result.emails[0].value;
+        console.log("result: " + result);
+
+      },
+      () => { this.username = "not logged in" },
+      () => console.log('REST call: ' + this.username)
+      );
+
+
   }
 
   ngOnInit() {
@@ -27,7 +44,7 @@ export class ConvertComponent implements OnInit {
   onSubmit() {
     console.log(this.inputLongUrl);
 
-    this.urlShortener$.convertAndStore(this.inputLongUrl)
+    this.urlShortener$.convertAndStore(this.inputLongUrl, this.email)
       .subscribe(
       result => {
         this.newUrl = result;

@@ -16,29 +16,43 @@ import IUrlModel from '../share/IUrlModel';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  username: string;
+  email: string;
   accountId: string;
   urlList: IUrlModel[];
-  name: string;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private urlShortener$: UrlShortenerService
   ) {
-    this.accountId = route.snapshot.params['id'];
-    urlShortener$.getUrlsForAccount(this.accountId)
+    //this.accountId = route.snapshot.params['id'];
+    urlShortener$.getUserInfo()
       .subscribe(
       result => {
-        console.log(result);
-        this.urlList = result.urls;
-        //this.name = "Post";
+        this.username = result.displayName;
+        this.email = result.emails[0].value;
+        this.accountId = result.emails[0].value;
+        console.log("getUserInfo result: " + result);
+
+        urlShortener$.getUrlsForAccount(this.accountId)
+          .subscribe(
+          result => {
+            console.log("getUrlsForAccount result: " + result);
+            this.urlList = result.urls;
+            //this.name = "Post";
+          },
+          () => { },
+          () => { }
+          );
       },
-      () => { },
-      () => { }
+      () => { this.username = "not logged in" },
+      () => console.log('REST call: ' + this.username)
       );
+
   }
 
-  ngOnInit():void {}
+  ngOnInit(): void { }
 
 }
 

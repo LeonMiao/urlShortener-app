@@ -1,5 +1,5 @@
 interface IUrlListModel {
-    accountId: number;
+    accountId: string;
     urls: [ {
         urlId: number;
         shortUrl: string;

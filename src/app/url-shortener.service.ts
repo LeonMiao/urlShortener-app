@@ -29,26 +29,26 @@ export class UrlShortenerService {
 
   //=======================
 
-  getAllAccounts() {
-    return this.http.get(this.host + '/app/account/')
-      .map(response => response.json());
-  }
-
-  getUrlsForAccount(pId: string) {
+  getTheAccount(pId: string) {
     return this.http.get(this.host + '/app/account/' + pId)
       .map(response => response.json());
   }
 
-  convertAndStore(inputLongUrl: string) {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
-    return this.http.post(this.host + '/app/url/', { longUrl: inputLongUrl })
+  getUrlsForAccount(pId: string) {
+    return this.http.get(this.host + '/app/account/url/' + pId)
       .map(response => response.json());
   }
 
-  findByShortUrl(inputShortUrl: string) {
-    return this.http.get(this.host + '/app/url/' + inputShortUrl)
+  convertAndStore(inputLongUrl: string, inputAccountId: string) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.host + '/app/url/', { longUrl: inputLongUrl, accountId: inputAccountId })
+      .map(response => response.json());
+  }
+
+  findByShortUrl(inputShortUrl: string, inputAccountId: string) {
+    return this.http.get(this.host + '/app/url/' + inputAccountId + '/' + inputShortUrl)
       .map(response => response.json());
   }
 

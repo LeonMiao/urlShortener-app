@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   //switchElement = true;
   username: string;
-  password: string;
+  email: string;
   router$: Router;
   urlShortener$: UrlShortenerService;
 
@@ -26,10 +26,12 @@ export class LoginComponent implements OnInit {
       .subscribe(
       result => {
         this.username = result.displayName;
-        this.password = result.emails[0].value;
+        this.email = result.emails[0].value;
+        console.log("result: " + result);
+
       },
       () => { this.username = "not logged in" },
-      () => console.log('REST call' + this.username)
+      () => console.log('REST call: ' + this.username)
       );
   }
 
