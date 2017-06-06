@@ -52,12 +52,12 @@ export class ConvertedComponent implements OnInit {
               this.outputShortUrl = result.shortUrl;
               console.log("outputShortUrl length: " + this.outputShortUrl.length);
 
-              this.outPutShortUrlToShow = 'http://localhost:8080/redirect/' + this.outputShortUrl;
+              this.outPutShortUrlToShow = 'http://localhost:8080/' + this.accountId + '/' + this.outputShortUrl;
               this.outputEmoji = result.emojiLink;
 
               console.log("emojiLink length: " + this.outputEmoji.length);
 
-              this.outPutEmojiToShow = 'http://localhost:8080/redirect/' + this.outputEmoji;
+              this.outPutEmojiToShow = 'http://localhost:8080/' + this.accountId + '/' + this.outputEmoji;
 
             },
             () => console.log('Error calling REST'),
